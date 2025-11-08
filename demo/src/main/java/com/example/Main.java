@@ -25,6 +25,5 @@ public class Main {
         scanner.close();
         System.out.println(BananaImage.isBanana(image, imageName));
 
-    }
-
+    
 }
