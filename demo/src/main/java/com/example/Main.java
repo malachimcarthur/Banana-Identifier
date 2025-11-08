@@ -14,9 +14,6 @@ public class Main {
 		b.Volume();
 		b.microsivertsPerInch();
         System.out.printf("Ounces: %.2f\nMicrosiverts: %.2f",b.toOunce(), b.microsivertsPerInch());
-
-    public static void main(String[] args) throws IOException {
-        System.out.printf("%f", Banana.Volume(-3, 3));
         String imageName = null;
         Scanner scanner = new Scanner(System.in);
         while (imageName == null) {
@@ -26,6 +23,5 @@ public class Main {
         scanner.close();
         System.out.println(BananaImage.isBanana(image, imageName));
 
-    }
-
+    
 }
