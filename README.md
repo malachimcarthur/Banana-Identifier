@@ -1,4 +1,4 @@
-# Banana-Identifier
+# Banana-Unit-Finder
 
 This repository was made for 2025 University of Nebraska - Lincoln CornHacks Event
 
