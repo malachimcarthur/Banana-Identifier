@@ -1,5 +1,10 @@
 package com.example;
 
+/**
+ * Constants used by the Banana class
+ * @see Banana.java
+ * @author Carter
+ */
 public class BananaConstants {
 	public static final double MICROSIVERTS_PER_INCH = 0.0111428571;
 	public static final double INCH_TO_FOOTBALL_FIELD = 3600;

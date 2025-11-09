@@ -8,10 +8,16 @@ import java.util.Scanner;
 
 import javax.imageio.ImageIO;
 
+/**
+ * Authors: Malachi, Carter
+ * Date: 11/8/2025
+ * Purpose: Takes a picture and detrrmines if its a banana. If it is, it finds and prints out attributes of the banana.
+ */
+
 public class Main {
 
     public static void main(String[] args) throws IOException {
-        Banana b = new Banana(3);
+        Banana b = new Banana(6);
         b.printBananaAttributes();
         String imageName = null;
         Scanner scanner = new Scanner(System.in);

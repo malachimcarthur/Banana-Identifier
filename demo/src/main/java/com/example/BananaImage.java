@@ -9,11 +9,21 @@ import java.util.Scanner;
 
 import javax.imageio.ImageIO;
 
+/**
+ * A set of function to process the image. Assumes camera is 10 inch from the surface with a 55mm lense.
+ */
 public class BananaImage {
     public BananaImage(BufferedImage image) {
 
     }
 
+    /**
+     * Determines if a given photo is a banana.
+     * @param image the buffered image.
+     * @param imageName the name of the image.
+     * @return true if it is a banana, false if not.
+     * @author Malahci
+     */
     public static boolean isBanana(BufferedImage image, String imageName) {
         int imageWidth = image.getWidth();
         int imageHeight = image.getHeight();
@@ -60,6 +70,12 @@ public class BananaImage {
         return isBanana;
     }
 
+    /**
+     * Gets the user input on the photo to select.
+     * @param scanner a scanner 
+     * @return the nameof the picture chosen.
+     * @author Malahci
+     */
     public static String choosePicture(Scanner scanner) {
         String[] files;
         System.out.println("Select which image to use: ");
