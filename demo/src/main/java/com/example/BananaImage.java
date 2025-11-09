@@ -75,7 +75,8 @@ public class BananaImage {
 
     private static void writeProcessedImage(String imageName, BufferedImage image) {
         try {
-            File outputFile = new File("demo\\src\\main\\java\\com\\example\\bananaImagesProcessed\\" + imageName);
+            File outputFile = new File(
+                    "demo\\src\\main\\java\\com\\example\\bananaImagesProcessed\\" + imageName + ".jpg");
             if (!ImageIO.write(image, "jpg", outputFile)) {
                 System.out.println("Something went wrong in processing the image.");
             }
@@ -103,7 +104,7 @@ public class BananaImage {
      * @return The name of the picture chosen.
      * @author Malachi.
      */
-    public static String choosePicture(Scanner scanner) {
+    public static String chooseImage(Scanner scanner) {
         String[] files;
         System.out.println("Select which image to use: ");
         File bananaDirectory = new File("demo\\src\\main\\java\\com\\example\\bananaImages");
@@ -113,12 +114,13 @@ public class BananaImage {
             System.err.println("Something went wrong with with the path name");
             return null;
         }
-        for (int index = 0; index < files.length; index++) {
-            System.out.println(files[index] + ",");
+        for (String file : files) {
+            System.out.println(file.replace(".jpg", ","));
         }
         String imageName = scanner.nextLine();
-        for (int index = 0; index < files.length; index++) {
-            if (files[index].equals(imageName)) {
+        imageName.replaceAll(".jpg", "").toLowerCase();
+        for (String file : files) {
+            if (file.replace(".jpg", "").toLowerCase().equals(imageName)) {
                 return imageName;
             }
         }
