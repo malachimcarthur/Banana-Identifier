@@ -13,6 +13,7 @@ import javax.imageio.ImageIO;
 /**
  * A set of function to process the image. Assumes camera is 10 inch from the
  * surface with a 55mm lense.
+ * 
  * @author Malachi
  */
 public class BananaImage {
@@ -119,7 +120,7 @@ public class BananaImage {
             System.out.println(file.replace(".jpg", ","));
         }
         String imageName = scanner.nextLine();
-        imageName.replaceAll(".jpg", "").toLowerCase();
+        imageName = imageName.replaceAll(".jpg", "").toLowerCase();
         for (String file : files) {
             if (file.replace(".jpg", "").toLowerCase().equals(imageName)) {
                 return imageName;

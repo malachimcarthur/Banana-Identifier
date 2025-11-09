@@ -55,7 +55,7 @@ public class Banana {
 	}
 
 	/**
-	 * @return The length of the banana.
+	 * @return The length of the banana in inches.
 	 */
 	public final double lengthOfBanana() {
 		return Math.abs(this.a - this.b);
@@ -81,7 +81,7 @@ public class Banana {
 	 */
 	public void printBananaAttributes() {
 		System.out.printf(
-				"Banana Length: %f\nWeight in ounces: %f\nBanana Volume: %f\nMicrosiverts Per Inch: %f\nBananas Across Football Field: %f\nBananas could fit in an oil barrel: %f",
+				"Banana Length: %fin.\nWeight in ounces: %foz\nBanana Volume: %fin^3\nMicrosiverts Per Inch: %fSv\nBananas Across Football Field: %fbananas\nBananas could fit in an oil barrel: %fbananas",
 				lengthOfBanana(),
 				toOunce(),
 				this.sizeCubicInch,
