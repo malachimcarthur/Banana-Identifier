@@ -15,7 +15,7 @@ public class Banana {
 	 * Creates a banana object.
 	 * Takes the length of the banana in pixels.
 	 * 
-	 * @param lengthInPixels The length of the banana in pixels
+	 * @param lengthInPixels The length of the banana in pixels.
 	 */
 	public Banana(double lengthInPixels) {
 		this.a = 0;
@@ -27,7 +27,7 @@ public class Banana {
 	/**
 	 * Gets the volume of an object assuming its a cylander.
 	 * 
-	 * @return The calculated volume of the banana in cubic inches
+	 * @return The calculated volume of the banana in cubic inches.
 	 */
 	public final double volume() {
 		double volume, t1, t2;
@@ -35,23 +35,21 @@ public class Banana {
 		t2 = this.a * Math.PI;
 		volume = t1 - t2;
 		volume *= 0.5;
-		// volume *= 2;
 		return volume;
-		// return (.5 * (getTerm(b) - getTerm(a))) * 2;
 	}
 
 	/**
 	 * @return The weight of the banana in ounces.
 	 */
 	public double toOunce() {
-		return this.sizeCubicInch * 0.57674377;
+		return this.sizeCubicInch * BananaConstants.CUBIC_INCH_TO_OUNCE;
 	}
 
 	/**
-	 * @return The microsiverts of the banana
+	 * @return The microsiverts of the banana per cubic inch.
 	 */
 	public double microsivertsPerInch() {
-		return lengthOfBanana() * BananaConstants.MICROSIVERTS_PER_INCH;
+		return this.sizeCubicInch * BananaConstants.MICROSIVERTS_PER_INCH;
 	}
 
 	/**
@@ -62,8 +60,7 @@ public class Banana {
 	}
 
 	/**
-	 * @return The amount of bananas needed to match the lengtnh of a football
-	 *         field.
+	 * @return The amount of bananas needed to match the lengtnh of a football field.
 	 */
 	public double bananaToFootballField() {
 		return BananaConstants.INCH_TO_FOOTBALL_FIELD / this.length;

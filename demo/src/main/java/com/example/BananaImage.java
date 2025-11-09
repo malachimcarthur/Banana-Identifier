@@ -18,6 +18,12 @@ import javax.imageio.ImageIO;
  */
 public class BananaImage {
 
+    /**
+     * Finds the length of the longest continuous line form the image, y or x.
+     * @param oldImage
+     * @param imageName
+     * @return The length of the longest continuous line.
+     */
     public static int bananaDimensions(BufferedImage oldImage, String imageName) {
         int imageHeight = 3024;
         int imageWidth = 4032;
@@ -69,12 +75,24 @@ public class BananaImage {
         return Math.max(longestX, longestY);
     }
 
+    /**
+     * Determines if the attribues of the given pixel are within a specific range.
+     * @param hue
+     * @param saturation
+     * @param brightness
+     * @return True if within range, False if not.
+     */
     private static boolean pixelCheck(float hue, float saturation, float brightness) {
         return hue > BananaConstants.HUE_LOWER_BOUND && hue < BananaConstants.HUE_UPPER_BOUND
                 && saturation > BananaConstants.SATURATION
                 && brightness > BananaConstants.BRIGHTNESS;
     }
 
+    /**
+     * Writes the processed image to a new file.
+     * @param imageName
+     * @param image
+     */
     private static void writeProcessedImage(String imageName, BufferedImage image) {
         try {
             File outputFile = new File(
@@ -88,6 +106,13 @@ public class BananaImage {
         }
     }
 
+    /**
+     * Finds the hsb value of the pixel given by the image at a (x,y) position.
+     * @param image
+     * @param x
+     * @param y
+     * @return The hsb values in a float array
+     */
     private static float[] getHsb(BufferedImage image, int x, int y) {
         Color color = new Color(image.getRGB(x, y));
         int r = color.getRed();
@@ -130,12 +155,18 @@ public class BananaImage {
         return null;
     }
 
+    /**
+     * Standardizes the width and hight of the given image.
+     * @param image
+     * @param newHeight
+     * @param newWidth
+     * @param flip
+     * @return The standardized image.
+     */
     private static BufferedImage StandardizedImage(BufferedImage image, int newHeight, int newWidth, boolean flip) {
         BufferedImage newImage = new BufferedImage(newWidth, newHeight, image.getType());
         Graphics2D g2d = newImage.createGraphics();
-        g2d.setRenderingHint(RenderingHints.KEY_INTERPOLATION, RenderingHints.VALUE_INTERPOLATION_BILINEAR); // For
-                                                                                                             // smoother
-                                                                                                             // scaling
+        g2d.setRenderingHint(RenderingHints.KEY_INTERPOLATION, RenderingHints.VALUE_INTERPOLATION_BILINEAR); 
         g2d.drawImage(image, 0, 0, newWidth, newHeight, null);
         g2d.dispose();
         return newImage;
